@@ -15,27 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="数据结构与算法.cpp">
+    <ClCompile Include="insertion_sort.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BubbleSort.cpp">
+    <ClCompile Include="bubble_sort.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AssistTools.cpp">
+    <ClCompile Include="main.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SelectionSort.cpp">
+    <ClCompile Include="selection_sort.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="assist_tools.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BubbleSort.h">
+    <ClInclude Include="insertion_sort.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="AssistTools.h">
+    <ClInclude Include="assist_tools.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="SelectionSort.h">
+    <ClInclude Include="bubble_sort.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="selection_sort.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

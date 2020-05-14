@@ -148,15 +148,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AssistTools.cpp" />
-    <ClCompile Include="BubbleSort.cpp" />
-    <ClCompile Include="SelectionSort.cpp" />
-    <ClCompile Include="数据结构与算法.cpp" />
+    <ClCompile Include="assist_tools.cc" />
+    <ClCompile Include="bubble_sort.cc" />
+    <ClCompile Include="insertion_sort.cc" />
+    <ClCompile Include="selection_sort.cc" />
+    <ClCompile Include="main.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AssistTools.h" />
-    <ClInclude Include="BubbleSort.h" />
-    <ClInclude Include="SelectionSort.h" />
+    <ClInclude Include="assist_tools.h" />
+    <ClInclude Include="bubble_sort.h" />
+    <ClInclude Include="insertion_sort.h" />
+    <ClInclude Include="selection_sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
