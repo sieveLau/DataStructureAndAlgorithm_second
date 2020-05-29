@@ -30,6 +30,9 @@
     <ClCompile Include="assist_tools.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="binary_search.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="insertion_sort.h">
@@ -42,6 +45,9 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="selection_sort.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="binary_search.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
