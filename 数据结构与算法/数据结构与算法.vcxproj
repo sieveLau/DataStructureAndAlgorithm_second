@@ -153,6 +153,8 @@
     <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="bubble_sort.cc" />
     <ClCompile Include="insertion_sort.cc" />
+    <ClCompile Include="linked_list.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="selection_sort.cc" />
     <ClCompile Include="main.cc" />
   </ItemGroup>
@@ -161,6 +163,8 @@
     <ClInclude Include="binary_search.h" />
     <ClInclude Include="bubble_sort.h" />
     <ClInclude Include="insertion_sort.h" />
+    <ClInclude Include="linked_list.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="selection_sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

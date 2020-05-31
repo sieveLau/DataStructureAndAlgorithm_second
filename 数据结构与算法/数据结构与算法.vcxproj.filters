@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\LinkedList">
+      <UniqueIdentifier>{9bb5a475-c57e-414d-bcef-c5ee437ace40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="insertion_sort.cc">
@@ -33,22 +36,34 @@
     <ClCompile Include="binary_search.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>源文件\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="linked_list.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="insertion_sort.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="assist_tools.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="bubble_sort.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="linked_list.h">
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="selection_sort.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="insertion_sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bubble_sort.h">
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="binary_search.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="assist_tools.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

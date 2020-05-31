@@ -6,9 +6,8 @@ namespace sieve
 	{
 		auto current = array;
 		if (*current == search_for) return (current - array);
-		size_t add = 0;
 		auto temp = length;
-		add = (length - 1) / 2;
+		size_t add = (length - 1) / 2;
 		current += add;
 		do
 		{
@@ -18,11 +17,9 @@ namespace sieve
 			{
 				temp = add;
 				add /= 2;
-			}
-			if(*current<search_for)
+			}else if(*current<search_for)
 			{
 				add = (temp + add) / 2;
-				
 			}
 			current = array + add;
 		}
