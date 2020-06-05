@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include <cstdio>
 #include "bubble_sort.h"
 #include "assist_tools.h"
 #include "selection_sort.h"
@@ -8,22 +8,18 @@
 
 int main()
 {
-	sieve::LinkedList ll(10);
-	ll.InsertToHead(1);
-	ll.InsertToHead(2);
-	ll.InsertToHead(3);
-	ll.InsertToHead(6);
+    sieve::LinkedList ll(10);
+    ll.InsertToHead(1);
+    ll.InsertToHead(2);
+    ll.InsertToHead(3);
+    ll.InsertToHead(6);
 
-	try
-	{
-		printf("%d\n", ll.GetData(10));
-	}
-	catch (std::out_of_range& e)
-	{
-		printf("%s\n", e.what());
-	}
-	
-	ll.Delete(3);
-	printf("%d\n", ll.GetData(3));
 
+    ll.Delete(3);
+
+    sieve::LinkedList ll_2(ll);
+
+    
+
+    printf("%d\n", ll_2.GetData(1));
 }

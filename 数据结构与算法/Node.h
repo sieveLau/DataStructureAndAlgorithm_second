@@ -3,21 +3,25 @@
 class Node
 {
 public:
-	explicit Node(int data);
+    explicit Node(int data);
 
-	explicit Node(int data, Node* nextnode);
+    explicit Node(int data, Node* nextnode);
 
-	int GetData() const;
+    Node(const Node& another);
 
-	void SetData(int data);
+    int GetData() const;
 
-	Node* GetNextNode() const;
+    void SetData(int data);
 
-	void SetNextNode( Node* next_node);
+    Node* GetNextNode();
 
-	~Node();
+    void SetNextNode(Node* next_node);
+
+    ~Node();
+
+    Node& operator=(const Node& another);
+
 private:
-	int data_;
-	Node * nextnode_;
-	
+    int data_;
+    Node* next_node_;
 };

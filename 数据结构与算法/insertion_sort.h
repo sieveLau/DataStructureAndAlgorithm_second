@@ -2,6 +2,5 @@
 
 namespace sieve
 {
-	void InsertionSort(int *,const size_t);
-	
+    void InsertionSort(int*, size_t);
 }

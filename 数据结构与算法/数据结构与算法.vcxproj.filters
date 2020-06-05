@@ -36,11 +36,14 @@
     <ClCompile Include="binary_search.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>源文件\LinkedList</Filter>
-    </ClCompile>
     <ClCompile Include="linked_list.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sorted_linked_list.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="node.cc">
+      <Filter>源文件\LinkedList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +66,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sorted_linked_list.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
