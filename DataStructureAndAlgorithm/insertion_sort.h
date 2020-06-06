@@ -1,6 +1,5 @@
 #pragma once
-
-namespace sieve
-{
+#include <cstddef>
+namespace sieve {
     void InsertionSort(int*, size_t);
 }

@@ -36,14 +36,14 @@
     <ClCompile Include="binary_search.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="linked_list.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="sorted_linked_list.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="node.cc">
       <Filter>源文件\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="linked_list.cc">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -22,8 +22,9 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{8BACB5F1-3887-499A-8595-B4BD317CFBB7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>数据结构与算法</RootNamespace>
+    <RootNamespace>DataStructureAndAlgorithm</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>DataStructureAndAlgorithm</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -153,7 +154,7 @@
     <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="bubble_sort.cc" />
     <ClCompile Include="insertion_sort.cc" />
-    <ClCompile Include="linked_list.cpp" />
+    <ClCompile Include="linked_list.cc" />
     <ClCompile Include="node.cc" />
     <ClCompile Include="selection_sort.cc" />
     <ClCompile Include="main.cc" />
