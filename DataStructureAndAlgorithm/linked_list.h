@@ -19,8 +19,8 @@ namespace sieve {
         size_t GetLength() const { return length_; };
         int GetData(size_t position) const;
 
-        int* ToArray();
-        std::string ToString();
+        int* ToArray() const;
+        std::string ToString() const;
 
         LinkedList& operator=(const LinkedList& another);
 

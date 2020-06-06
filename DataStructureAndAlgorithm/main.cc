@@ -21,4 +21,6 @@ int main() {
 
     printf("linkedlist1:%s\n", ll.ToString().c_str());
     printf("sortedlinkedlist:%s\n", sll.ToString().c_str());
+
+    return 0;
 }

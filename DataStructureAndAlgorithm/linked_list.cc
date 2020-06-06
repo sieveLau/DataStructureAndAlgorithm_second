@@ -18,7 +18,7 @@ namespace sieve {
     LinkedList::LinkedList(const LinkedList& another) {
         if (!(&another == this)) {
             head_        = new Node(*another.head_);
-            auto current = head_;
+            auto* current = head_;
             while (current != nullptr) {
                 if (current->GetNextNode() == nullptr)
                     break;
@@ -29,9 +29,7 @@ namespace sieve {
         }
     }
 
-    LinkedList::~LinkedList() {
-        while (head_ != nullptr) Delete(0);
-    }
+    LinkedList::~LinkedList() { while (head_ != nullptr) Delete(0); }
 
     void LinkedList::Insert(const int data, const size_t position) {
         if (position == 0) {
@@ -57,9 +55,7 @@ namespace sieve {
             current = current->GetNextNode();
             ++position;
         }
-        if (current == nullptr) {
-            return NOTFOUND;
-        }
+        if (current == nullptr) { return NOTFOUND; }
         return position;
     }
 
@@ -67,11 +63,11 @@ namespace sieve {
         if (position == 0) {
             if (head_ == nullptr)
                 return;
-            const auto kOriginNode = head_;
+            auto* const kOriginNode = head_;
             head_                  = head_->GetNextNode();
             delete kOriginNode;
         } else {
-            auto pre_node           = GetNode(position - 1);
+            auto* pre_node = GetNode(position - 1);
             auto* const kOriginNode = pre_node->GetNextNode();
             pre_node->SetNextNode(kOriginNode->GetNextNode());
             delete kOriginNode;
@@ -83,8 +79,8 @@ namespace sieve {
         return GetNode(position)->GetData();
     }
 
-    int* LinkedList::ToArray() {
-        auto result   = new int[length_];
+    int* LinkedList::ToArray() const {
+        auto* result   = new int[length_];
         auto* current = head_;
         for (size_t i = 0; i < length_; ++i) {
             result[i] = current->GetData();
@@ -93,10 +89,8 @@ namespace sieve {
         return result;
     }
 
-    std::string LinkedList::ToString() {
-        if (length_ == 0) {
-            return std::string("[]");
-        }
+    std::string LinkedList::ToString() const {
+        if (length_ == 0) { return std::string("[]"); }
         std::string str;
         auto* current = head_;
         str.append("[");
@@ -117,4 +111,4 @@ namespace sieve {
         }
         return *this;
     }
-}  // namespace sieve
+} // namespace sieve

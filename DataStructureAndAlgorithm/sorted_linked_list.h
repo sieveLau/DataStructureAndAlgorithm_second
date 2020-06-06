@@ -18,12 +18,14 @@ namespace sieve {
 
         void Delete(size_t position) { ll_->Delete(position); };
 
-        int Find(int data) { return ll_->Find(data); };
+        int Find(int data) const { return ll_->Find(data); };
 
         size_t GetLength() const { return ll_->GetLength(); }
-        int* ToArray() { return ll_->ToArray(); }
-        std::string ToString() { return ll_->ToString(); }
+        int* ToArray() const { return ll_->ToArray(); }
+        std::string ToString() const { return ll_->ToString(); }
 
         ~SortedLinkedList() { delete ll_; }
+
+        SortedLinkedList& operator=(const SortedLinkedList& another);
     };
 }  // namespace sieve

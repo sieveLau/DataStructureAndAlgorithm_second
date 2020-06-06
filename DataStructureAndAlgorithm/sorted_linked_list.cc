@@ -56,4 +56,11 @@ namespace sieve {
             }
         }
     }
+
+    SortedLinkedList& SortedLinkedList::operator=(
+        const SortedLinkedList& another) {
+        delete ll_;
+        ll_ = another.ll_;
+        return *this;
+    }
 }  // namespace sieve
