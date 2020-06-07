@@ -11,7 +11,7 @@ namespace sieve {
         ll_ = new LinkedList(*source.ll_);
     }
 
-    SortedLinkedList::SortedLinkedList(int data) { ll_ = new LinkedList(data); }
+    SortedLinkedList::SortedLinkedList(const int data) { ll_ = new LinkedList(data); }
 
     SortedLinkedList::SortedLinkedList(const LinkedList& ll) {
         ll_           = new LinkedList();
@@ -23,19 +23,17 @@ namespace sieve {
     }
 
     void SortedLinkedList::Insert(int data) {
-        size_t length = GetLength();
+        const auto kLength = GetLength();
+
         //空表，直接插入在第一个
-        if (length == 0) {
+        // 非空，如果第一个大于要插入的，插在第一个
+        auto* current = ll_->head_;
+        if (kLength == 0 || current->GetData() - data > 0) {
             ll_->InsertToHead(data);
             return;
         }
 
-        auto* current = ll_->head_;
-        // 非空，如果第一个大于要插入的，插在第一个
-        if (current->GetData() - data > 0) {
-            ll_->InsertToHead(data);
-            return;
-        }
+        
         // 非空，要找插入的地方
         for (;;) {
             auto* next = current->GetNextNode();
