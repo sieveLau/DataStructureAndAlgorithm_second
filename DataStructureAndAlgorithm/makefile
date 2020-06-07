@@ -1,19 +1,20 @@
-objects = main.o assist_tools.o linked_list.o node.o sorted_linked_list.o
-CXXFLAGS = -march=native
+CXXFLAGS = -march=native -MP -MD
 CCFLAGS = $(CXXFLAGS)
-
+SRC = $(wildcard *.cc)
 all : main
 
-debug : CXXFLAGS += -DDEBUG -DUNICODE -Wall -g
-debug: CCFLAGS += -DDEBUG -DUNICODE  -Wall -g
+debug : CXXFLAGS += -DDEBUG -DUNICODE -Wall -g -O0
+debug: CCFLAGS += -DDEBUG -DUNICODE  -Wall -g -O0
 debug: main
 
-main: $(objects)
-	$(CXX) -o main $(objects)
+main: $(SRC:%.cc=%.o)
+	$(CXX) -o $@ $^
 
 linked_list.o: node.h
 sorted_linked_list.o: linked_list.h node.h
 
+-include $(SRC:.cc=.d)
+
 .PHONY : clean
 clean :
-	-rm main $(objects)
+	-rm main *.o *.d

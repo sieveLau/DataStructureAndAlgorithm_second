@@ -1,0 +1,3 @@
+Checks: '-*,clang-analyzer-*,cppcoreguidelines-*,google-*,modernize-*,readability-*,performance-*, \
+        -cppcoreguidelines-pro-type-vararg,\
+        -cppcoreguidelines-owning-memory'
