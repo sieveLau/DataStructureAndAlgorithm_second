@@ -155,6 +155,7 @@
     <ClCompile Include="assist_tools.cc" />
     <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="bubble_sort.cc" />
+    <ClCompile Include="double_linked_node.cc" />
     <ClCompile Include="insertion_sort.cc" />
     <ClCompile Include="linked_list.cc" />
     <ClCompile Include="node.cc" />
@@ -166,6 +167,7 @@
     <ClInclude Include="assist_tools.h" />
     <ClInclude Include="binary_search.h" />
     <ClInclude Include="bubble_sort.h" />
+    <ClInclude Include="double_linked_node.h" />
     <ClInclude Include="insertion_sort.h" />
     <ClInclude Include="linked_list.h" />
     <ClInclude Include="Node.h" />

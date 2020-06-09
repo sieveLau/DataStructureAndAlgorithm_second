@@ -51,6 +51,7 @@ namespace sieve {
                 // 下一个的值比data大，确定位置就是current后一个
                 current->SetNextNode(new Node(data, next));
                 ++(ll_->length_);
+                return;
             }
         }
     }
