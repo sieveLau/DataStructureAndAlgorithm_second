@@ -1,13 +1,9 @@
 ﻿#include <cstdio>
+#include <string>
 
 #include "assist_tools.h"
-#include "binary_search.h"
-#include "bubble_sort.h"
-#include "insertion_sort.h"
 #include "linked_list.h"
-#include "selection_sort.h"
 #include "sorted_linked_list.h"
-#include <string>
 int main() {
     sieve::LinkedList ll(10);
     ll.InsertToHead(1);

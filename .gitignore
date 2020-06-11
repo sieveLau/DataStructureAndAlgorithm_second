@@ -372,3 +372,6 @@ healthchecksdb
 *.exe
 *.out
 *.app
+
+# intercept-build
+compile_commands.json
