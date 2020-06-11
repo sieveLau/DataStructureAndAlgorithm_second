@@ -4,20 +4,22 @@ namespace sieve {
         int data_;
         DoubleLinkedNode* next_node_;
         DoubleLinkedNode* prev_node_;
-        DoubleLinkedNode();
-
+        
        public:
-        DoubleLinkedNode(int data, DoubleLinkedNode* prev_node = nullptr,
+        DoubleLinkedNode() = delete;
+        explicit DoubleLinkedNode(int data, DoubleLinkedNode* prev_node = nullptr,
                          DoubleLinkedNode* next_node = nullptr);
         DoubleLinkedNode(const DoubleLinkedNode& another);
         ~DoubleLinkedNode();
 
-        void SetData();
+        void SetData(int data);
         void SetNextNode(DoubleLinkedNode* node);
         void SetPrevNode(DoubleLinkedNode* node);
 
-        int GetData();
-        DoubleLinkedNode* GetNextNode();
-        DoubleLinkedNode* GetPrevNode();
+        int GetData() const;
+        DoubleLinkedNode* GetNextNode() const;
+        DoubleLinkedNode* GetPrevNode() const;
+
+        DoubleLinkedNode& operator=(const DoubleLinkedNode& another);
     };
 }  // namespace sieve
