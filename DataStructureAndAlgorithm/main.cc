@@ -1,22 +1,21 @@
-﻿#include <cstdio>
+#include <cstdio>
 #include <string>
 
 #include "assist_tools.h"
+#include "double_linked_list.h"
 #include "linked_list.h"
 #include "sorted_linked_list.h"
 int main() {
-    sieve::LinkedList ll(10);
-    ll.InsertToHead(1);
-    ll.InsertToHead(2);
-    ll.InsertToHead(3);
-    ll.InsertToHead(6);
-
-    sieve::LinkedList ll_2(ll);
-
-    sieve::SortedLinkedList sll(ll);
-
-    printf("linkedlist1:%s\n", ll.ToString().c_str());
-    printf("sortedlinkedlist:%s\n", sll.ToString().c_str());
+    sieve::DoubleLinkedList dll(3);
+    dll.Insert(1, 0);
+    dll.Insert(1, 0);
+    dll.Insert(1, 0);
+    dll.Insert(1, 0);
+    dll.Insert(1, 0);
+    dll.Insert(1, 0);
+    dll.InsertToHead(5);
+    dll.Delete(dll.Size() - 1);
+    printf("%s\n", dll.ToString().c_str());
 
     return 0;
 }

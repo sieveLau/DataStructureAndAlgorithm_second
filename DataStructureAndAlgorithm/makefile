@@ -8,10 +8,10 @@ debug: CCFLAGS += -DDEBUG -DUNICODE  -Wall -g -O0
 debug: main
 
 main: $(SRC:%.cc=%.o)
-	$(CXX) -o $@ $^
+	$(CXX) -o $@.out $^
 
 -include $(SRC:.cc=.d)
 
 .PHONY : clean
 clean :
-	-rm main *.o *.d
+	-rm main.out *.o *.d
