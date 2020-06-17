@@ -379,5 +379,8 @@ compile_commands.json
 # clangd
 .clangd
 
+# ccls
+.ccls-cache
+
 # vscode
 .vscode
