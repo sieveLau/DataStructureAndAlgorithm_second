@@ -48,6 +48,9 @@
     <ClCompile Include="double_linked_node.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="merge_sort.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linked_list.h">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="double_linked_node.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="merge_sort.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

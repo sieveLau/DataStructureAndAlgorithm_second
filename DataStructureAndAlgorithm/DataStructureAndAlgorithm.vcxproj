@@ -158,6 +158,7 @@
     <ClCompile Include="double_linked_node.cc" />
     <ClCompile Include="insertion_sort.cc" />
     <ClCompile Include="linked_list.cc" />
+    <ClCompile Include="merge_sort.cc" />
     <ClCompile Include="node.cc" />
     <ClCompile Include="selection_sort.cc" />
     <ClCompile Include="main.cc" />
@@ -170,6 +171,7 @@
     <ClInclude Include="double_linked_node.h" />
     <ClInclude Include="insertion_sort.h" />
     <ClInclude Include="linked_list.h" />
+    <ClInclude Include="merge_sort.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="selection_sort.h" />
     <ClInclude Include="sorted_linked_list.h" />

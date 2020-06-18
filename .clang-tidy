@@ -1,1 +1,2 @@
-Checks: '-*,clang-analyzer-*,cppcoreguidelines-*,google-*,modernize-*,readability-*,performance-*,-cppcoreguidelines-pro-type-vararg,-modernize-use-trailing-return-type'
+Checks: '*,-hicpp-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-modernize-avoid-c-arrays,-cppcoreguidelines-avoid-c-arrays, -cppcoreguidelines-pro-type-vararg,-cppcoreguidelines-owning-memory,-modernize-use-nodiscard,-modernize-use-trailing-return-type,-clang-diagnostic-c++98-compat
+'
