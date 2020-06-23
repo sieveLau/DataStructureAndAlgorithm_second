@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <string>
-
+#include "defs.h"
 #include "assist_tools.h"
 #include "double_linked_list.h"
 #include "linked_list.h"

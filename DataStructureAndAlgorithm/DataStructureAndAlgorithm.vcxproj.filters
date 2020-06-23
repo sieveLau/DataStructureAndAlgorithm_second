@@ -83,5 +83,8 @@
     <ClInclude Include="merge_sort.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="defs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

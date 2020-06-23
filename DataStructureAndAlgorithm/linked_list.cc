@@ -104,11 +104,4 @@ namespace sieve {
         return str;
     }
 
-    LinkedList& LinkedList::operator=(const LinkedList& another) {
-        if (!(&another == this)) {
-            head_   = another.head_;
-            length_ = another.length_;
-        }
-        return *this;
-    }
 } // namespace sieve
