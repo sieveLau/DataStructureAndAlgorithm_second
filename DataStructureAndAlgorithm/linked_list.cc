@@ -1,7 +1,6 @@
 #include "linked_list.h"
 
 #include <stdexcept>
-#include <string>
 #define NOTFOUND (-1)
 
 namespace sieve {

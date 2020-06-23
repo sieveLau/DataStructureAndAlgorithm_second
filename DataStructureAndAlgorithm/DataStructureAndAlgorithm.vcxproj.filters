@@ -42,14 +42,14 @@
     <ClCompile Include="node.cc">
       <Filter>源文件\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="linked_list.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="double_linked_node.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="merge_sort.cc">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="linked_list.cc">
+      <Filter>源文件\LinkedList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
