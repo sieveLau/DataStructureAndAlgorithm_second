@@ -3,21 +3,33 @@
 #include <string>
 
 #include "node.h"
-namespace sieve {
-    class LinkedList {
-       public:
-        LinkedList();
-        explicit LinkedList(int data);
+#include "test_data_class.h"
+namespace sieve
+{
+    class LinkedList
+    {
+    public:
+        LinkedList() {
+            head_ = nullptr;
+            length_ = 0;
+        };
+        explicit LinkedList(TestData data) {
+            head_ = new Node<TestData>(std::move(data));
+            length_ = 1;
+        };
+
         LinkedList(const LinkedList& another);
 
         LinkedList& operator=(LinkedList another) {
             swap(*this, another);
             return *this;
         };
-        
-        LinkedList(LinkedList&& another) noexcept : LinkedList() {
+
+        LinkedList(LinkedList&& another) noexcept
+            : LinkedList() {
             swap(*this, another);
         };
+
         friend void swap(LinkedList& dest, LinkedList& src) noexcept {
             using std::swap;
             swap(dest.length_, src.length_);
@@ -26,39 +38,46 @@ namespace sieve {
 
         ~LinkedList();
 
-        void Insert(int data, size_t position);
-        void InsertToTail(int data);
-        void InsertToHead(int data);
+        // 插入时给一个复制品，保证内存由链表控制
+        // 成功就true，不成功false
+        bool Insert(TestData data, size_t position=0);
+
         int Find(int data);
-        // bool Has(int data);
+
         void Delete(size_t position);
 
-        auto GetLength() const -> size_t { return length_; };
-        int GetData(size_t position) const;
+        auto GetLength() const -> size_t {
+            return length_;
+        };
 
-        int* ToArray() const;
-        std::string ToString() const;
 
-        
-
-       private:
-        Node* head_;
-        size_t length_;
-        Node* GetNode(size_t position) const;
-
-        friend class SortedLinkedList;
-    };
-
-    inline Node* LinkedList::GetNode(const size_t position) const {
-        if (position >= length_)
+        // 给复制品，不影响list本身，要改就用Set
+        TestData* GetData(size_t position) const {
+            auto* target = GetNode(position);
+            if (!(target==nullptr)) {
+                return new TestData(std::move(target->GetData()));
+            }
             return nullptr;
-
-        size_t i     = 0;
-        auto current = head_;
-        while (i != position && i < length_) {
-            current = current->GetNextNode();
-            ++i;
         }
-        return current;
-    }
-}  // namespace sieve
+
+        bool SetData(TestData data, size_t position);
+
+        // std::string ToString() const;
+
+
+    private:
+        Node<TestData>* head_;
+        size_t length_;
+        inline Node<TestData>* GetNode(size_t position) const {
+            if (position >= length_ || length_ == 0)return nullptr;
+            auto i = position;
+            auto* current = head_;
+            while(i>0) {
+                current = current->GetNextNode();
+                i--;
+            }
+            return current;
+
+        }
+    };
+} // namespace sieve

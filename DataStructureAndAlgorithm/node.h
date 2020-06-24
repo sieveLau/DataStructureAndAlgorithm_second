@@ -1,27 +1,58 @@
-﻿#pragma once
+#pragma once
+#include "utility"
+#include "test_data_class.h"
 
+template <typename T>
 class Node
 {
 public:
-    explicit Node(int data);
+    explicit Node(T data, Node* next_node = nullptr) {
+        data_= T(std::move(data));
+        next_node_ = next_node;
+    };
 
-    explicit Node(int data, Node* nextnode);
+    Node(const Node& another) {
+        data_ = another.data_;
+        next_node_ = another.next_node_;
+    };
 
-    Node(const Node& another);
+    Node(Node&& another) noexcept
+        : Node() {
+        swap(*this, another);
+    };
 
-    int GetData() const;
+    friend void swap(Node& dest, Node& src) noexcept {
+        using std::swap;
+        swap(dest.data_, src.data_);
+        swap(dest.next_node_, src.next_node_);
+    };
 
-    void SetData(int data);
+    Node& operator=(Node another) {
+        swap(*this, another);
+        return *this;
+    };
 
-    Node* GetNextNode();
+    ~Node() {
+        next_node_ = nullptr;
+    };
+    // 给复制品，不影响内容
+    T GetData() {
+        return data_;
+    };
 
-    void SetNextNode(Node* next_node);
+    void SetData(T data) {
+        data_=T(std::move(data));
+    };
 
-    ~Node();
+    Node* GetNextNode() {
+        return next_node_;
+    };
 
-    Node& operator=(const Node& another);
+    void SetNextNode(Node* next_node) {
+        next_node_ = next_node;
+    };
 
 private:
-    int data_;
+    T data_;
     Node* next_node_;
 };

@@ -1,106 +1,88 @@
 #include "linked_list.h"
 
-#include <stdexcept>
-#define NOTFOUND (-1)
+namespace sieve
+{
+    LinkedList::LinkedList(const LinkedList& another) {
+        auto* his_current = another.head_->GetNextNode();
+        head_ = new Node<TestData>(another.head_->GetData());
+        auto* my_current = head_;
+        while (his_current != nullptr) {
 
-namespace sieve {
-    LinkedList::LinkedList() {
-        head_   = nullptr;
+            // 我的下一个的数据是它的下一个的数据，nextnode下一个循环再设置
+            // his_current比my_current的位置后一个
+            my_current->SetNextNode(new Node<TestData>(his_current->GetData()));
+
+            my_current = my_current->GetNextNode();
+            his_current = his_current->GetNextNode();
+        }
+        length_ = another.length_;
+    }
+
+    LinkedList::~LinkedList() {
+        auto* to_delete = head_;
+        while (head_ != nullptr) {
+            head_ = to_delete->GetNextNode();
+            delete to_delete;
+            to_delete = head_;
+        }
         length_ = 0;
     }
 
-    LinkedList::LinkedList(int data) {
-        head_   = new Node(data, nullptr);
-        length_ = 1;
-    }
-
-    LinkedList::LinkedList(const LinkedList& another) {
-        if (!(&another == this)) {
-            head_        = new Node(*another.head_);
-            auto* current = head_;
-            while (current != nullptr) {
-                if (current->GetNextNode() == nullptr)
-                    break;
-                current->SetNextNode(new Node(*current->GetNextNode()));
-                current = current->GetNextNode();
-            }
-            length_ = another.length_;
-        }
-    }
-
-    LinkedList::~LinkedList() { while (head_ != nullptr) Delete(0); }
-
-    void LinkedList::Insert(const int data, const size_t position) {
+    bool LinkedList::Insert(TestData data, size_t position) {
+      
         if (position == 0) {
-            Node* new_node = new Node(data, head_);
-            head_          = new_node;
-        } else {
-            Node* pre_node    = GetNode(position - 1);
-            Node* origin_node = pre_node->GetNextNode();
-            Node* new_node    = new Node(data, origin_node);
-            pre_node->SetNextNode(new_node);
+            head_ = new Node<TestData>(std::move(data), head_);
+
         }
-        ++length_;
+        else {
+
+            auto* current = GetNode(position - 1);
+            if (current == nullptr)return false;
+            current->SetNextNode(
+                new Node<TestData>(std::move(data), current->GetNextNode()));
+        }
+
+        length_++;
+        return true;
     }
 
-    void LinkedList::InsertToTail(int data) { Insert(data, length_); }
-
-    void LinkedList::InsertToHead(const int data) { Insert(data, 0); }
-
-    int LinkedList::Find(const int data) {
-        auto current    = head_;
+    // 根据数据找节点
+    // 如果找到最后没有，返回值等于length_
+    int LinkedList::Find(int data) {
+        auto* current = head_;
         size_t position = 0;
-        while (current != nullptr && current->GetData() != data) {
+        while (current!=nullptr) {
+            if (current->GetData().GetData() == data)break;
             current = current->GetNextNode();
-            ++position;
+            position++;
         }
-        if (current == nullptr) { return NOTFOUND; }
         return position;
     }
 
-    void LinkedList::Delete(const size_t position) {
-        if (position == 0) {
-            if (head_ == nullptr)
-                return;
-            auto* const kOriginNode = head_;
-            head_                  = head_->GetNextNode();
-            delete kOriginNode;
-        } else {
-            auto* pre_node = GetNode(position - 1);
-            auto* const kOriginNode = pre_node->GetNextNode();
-            pre_node->SetNextNode(kOriginNode->GetNextNode());
-            delete kOriginNode;
+    void LinkedList::Delete(size_t position) {
+        if(position==0) {
+            auto* to_delete = head_;
+            head_ = to_delete->GetNextNode();
+            delete to_delete;
+            
         }
-        --length_;
-    }
-
-    int LinkedList::GetData(const size_t position) const {
-        return GetNode(position)->GetData();
-    }
-
-    int* LinkedList::ToArray() const {
-        auto* result   = new int[length_];
-        auto* current = head_;
-        for (size_t i = 0; i < length_; ++i) {
-            result[i] = current->GetData();
-            current   = current->GetNextNode();
+        else {
+            
+            auto* current = GetNode(position - 1);
+            if(current==nullptr)return;
+            auto* to_delete = current->GetNextNode();
+            if (to_delete == nullptr)return;
+            current->SetNextNode(to_delete->GetNextNode());
+            delete to_delete;
         }
-        return result;
+
+        length_--;
     }
 
-    std::string LinkedList::ToString() const {
-        if (length_ == 0) { return std::string("[]"); }
-        std::string str;
-        auto* current = head_;
-        str.append("[");
-
-        for (size_t i = 0; i < length_; i++) {
-            str.append(std::to_string(current->GetData()));
-            str.append(",");
-            current = current->GetNextNode();
-        }
-        str.append("]");
-        return str;
+    bool LinkedList::SetData(TestData data, size_t position) {
+        auto* target = GetNode(position);
+        if (target == nullptr)return false;
+        target->SetData(std::move(data));
+        return true;
     }
-
-} // namespace sieve
+}

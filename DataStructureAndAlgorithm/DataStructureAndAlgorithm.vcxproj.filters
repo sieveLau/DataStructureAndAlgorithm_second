@@ -18,72 +18,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="insertion_sort.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="bubble_sort.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="selection_sort.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="assist_tools.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="binary_search.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="sorted_linked_list.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="node.cc">
-      <Filter>源文件\LinkedList</Filter>
-    </ClCompile>
-    <ClCompile Include="double_linked_node.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="merge_sort.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="linked_list.cc">
       <Filter>源文件\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="test_data_class.cc">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linked_list.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="selection_sort.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="insertion_sort.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="bubble_sort.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="binary_search.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="assist_tools.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="sorted_linked_list.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="double_linked_node.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="merge_sort.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="defs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test_data_class.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
